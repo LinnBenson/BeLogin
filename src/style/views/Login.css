@@ -1,0 +1,17 @@
+main {
+    width: 380px;
+    margin: 20px auto;
+}
+main img.titleImg {
+    display: block;
+    height: 200px;
+    margin: 50px auto;
+    margin-bottom: 10px;
+}
+main h4 {
+    margin-bottom: 40px;
+    text-align: center;
+}
+main div.unitInput {
+    margin-bottom: 30px;
+}

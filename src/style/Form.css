@@ -1,0 +1,40 @@
+div.unitInput {
+    --height: 36px;
+    --background: rgb( var( --r0 ) );
+    --radius: 4px;
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+}
+div.unitInput p.inputTitle {
+    padding-left: 5px;
+    font-size: 12px;
+    line-height: 24px;
+}
+div.unitInput p.inputTitle i {
+    margin-right: 4px;
+}
+div.unitInput i.iconLeft {
+    background: rgb( var( --r3 ) );
+    border-radius: var( --radius ) 0px 0px var( --radius );
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+div.unitInput i.error {
+    background: rgb( var( --r4 ) );
+}
+div.unitInput input {
+    width: 100%;
+    height: var( --height );
+    padding: 0px 16px;
+    padding-left: calc( var( --height ) + 10px );
+    background: var( --background );
+    border: none;
+    border-radius: var( --radius );
+    box-sizing: border-box;
+}
+div.unitInput input::placeholder {
+    color: rgb( var( --r1 ), 0.5 );
+    font-size: 14px;
+}

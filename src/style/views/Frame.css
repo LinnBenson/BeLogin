@@ -1,0 +1,62 @@
+div#body {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+div#body::before {
+    content: "";
+    display: block;
+    background: rgb( var( --r0 ), 0.75 );
+}
+div#body::before, div#body div#content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+div#content div#contentBox {
+    width: 540px;
+    padding: 25px;
+    margin: 120px auto;
+    background: rgb( var( --r5 ), 0.75 );
+    -webkit-backdrop-filter: blur( 8px );
+    backdrop-filter: blur( 8px );
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+div#contentBox header {
+    padding-bottom: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed rgb( var( --r1 ), 0.5 );
+}
+div#contentBox header a.logo img {
+    height: 22px;
+}
+div#contentBox header a.help {
+    float: right;
+    padding: 0px 12px;
+    border: 1px dashed rgb( var( --r1 ), 0.5 );
+    font-size: 12px;
+    line-height: 22px;
+    border-radius: 4px;
+}
+div#contentBox header a.help:hover {
+    background: rgb( var( --r5 ) );
+}
+div#contentBox header a.help i {
+    margin-right: 8px;
+    font-size: 12px;
+}
+div#contentBox footer {
+    padding-top: 16px;
+    margin-top: 30px;
+    border-top: 1px dashed rgb( var( --r1 ), 0.5 );
+}
+div#contentBox footer p, footer p a {
+    font-size: 12px;
+    line-height: 20px;
+}

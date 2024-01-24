@@ -1,0 +1,167 @@
+/* 通用样式 */
+div#mask, div#load, div#toast {
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+div#mask.action, div#load.action, div#toast.action {
+    opacity: 1;
+    pointer-events: all;
+}
+/* 遮罩层 */
+div#mask {
+    background: rgb( var( --r0 ), 0.75 );
+}
+/* 加载控件 */
+div#load { transform: scale( 0 ); }
+div#load.action { transform: scale( 1 ); }
+div#load div div{
+    height: 80px;
+}
+div#load div div i.anima {
+    display: block;
+    width: 6px;
+    height: 10px;
+    margin: 0px auto;
+    background: rgb( var( --r1 ) );
+    overflow: unset;
+    position: relative;
+    animation: loadingRunAnime infinite 1s ease-in-out -0.2s;
+}
+div#load div div i.anima:before, div#load div div i.anima:after {
+    content: "";
+    width: 6px;
+    height: 10px;
+    background: rgb( var( --r1 ) );
+    position: absolute;
+}
+div#load div div i.anima:before {
+    left: -14px;
+    animation: loadingRunAnime infinite 1s ease-in-out -0.4s;
+}
+div#load div div i.anima:after {
+    right: -14px;
+    animation: loadingRunAnime infinite 1s ease-in-out;
+}
+div#load div p {
+    margin-bottom: 100px;
+    font-size: 18px;
+    font-weight: bold;
+}
+@keyframes loadingRunAnime {
+    0%, 80%, 100% {
+        height: 20px;
+        box-shadow: 0 0 rgb( var( --r1 ) );
+    }
+    40% {
+        height: 30px;
+        box-shadow: 0 -20px rgb( var( --r1 ) );
+    }
+}
+/* 通知控件 */
+div#toast {
+    height: auto;
+    text-align: center;
+    pointer-events: none !important;
+}
+div#toast div.content {
+    --height: 32px;
+    --fontSize: 14px;
+    display: inline-block;
+    max-width: 95%;
+    padding: 0px 20px;
+    margin-top: -50vh;
+    background: rgb( var( --r5 ) );
+    box-sizing: border-box;
+    border: 1px solid rgb( var( --r3 ) );
+    border-radius: 8px;
+    overflow: hidden;
+}
+div#toast.error div.content {
+    border: 1px solid rgb( var( --r4 ) );
+}
+div#toast.action div.content { margin-top: 70px; }
+div#toast.action div.content {
+    animation: toastOpenAnima 0.3s forwards ease-in-out;
+} @keyframes toastOpenAnima {
+    0%{ margin-top: 0px;}
+    60%{ margin-top: 80px; }
+    80%{ margin-top: 60px; }
+    100%{ margin-top: 70px; }
+}
+div#toast div.content i {
+    float: left;
+    margin-left: -20px;
+    margin-right: 14px;
+    background: rgb( var( --r3 ) );
+    font-size: var( --fontSize );
+}
+div#toast.error div.content i {
+    background: rgb( var( --r4 ) );
+}
+div#toast div.content span {
+    font-size: var( --fontSize );
+    line-height: var( --height );
+}
+button.unitButton, a.unitButton {
+    --fontSize: 14px;
+    --color: rgb( var( --r1 ) );
+    --radius: 4px;
+    display: inline-block;
+    height: var( --height );
+    margin: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+button.unitButton::before, a.unitButton::before {
+    content: "";
+    width: calc( 100% + 10px );
+    height: calc( 100% + 10px );
+    background: var( --background );
+    border-radius: calc( var( --radius ) + 2px );
+    opacity: 0;
+    transform: scale( 0.75 );
+    transition: transform 0.2s ease-in-out;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    z-index: 0;
+}
+button.unitButton.stop, a.unitButton.stop {
+    opacity: 0.65;
+    pointer-events: none;
+    cursor: no-drop;
+}
+button.unitButton:hover::before, a.unitButton:hover::before {
+    opacity: 0.25;
+    transform: scale( 1 );
+}
+button.unitButton span, a.unitButton span {
+    display: flex;
+    width: auto;
+    height: 100%;
+    padding: 0px calc( ( var( --height ) / 2 ) + ( var( --height ) / 10 ) );
+    background: var( --background );
+    color: var( --color );
+    font-size: var( --fontSize );
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    border-radius: var( --radius );
+    z-index: 1;
+    -webkit-display: flex;
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
+}
+button.unitButton span i, a.unitButton span i {
+    margin-right: 6px;
+    color: var( --color );
+    font-size: var( --fontSize );
+    vertical-align: middle;
+}

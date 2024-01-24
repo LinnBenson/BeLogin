@@ -1,0 +1,50 @@
+ul.External {
+    padding-top: 30px;
+    margin-top: 40px;
+    list-style: none;
+    border-top: 1px dashed rgb( var( --r1 ), 0.25 );
+}
+ul.External li {
+    --height: 60px;
+    display: block;
+    width: 100%;
+    height: var( --height );
+    margin-bottom: 16px;
+    background: rgb( var( --r3 ), 0.25 );
+    line-height: var( --height );
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+ul.External li:hover {
+    background: rgb( var( --r3 ), 0.5 );
+}
+ul.External a.stop, ul.External li.stop {
+    pointer-events: none;
+}
+ul.External li i {
+    color: rgb( var( --r1 ) );
+}
+ul.External li span {
+    display: block;
+    height: 20px;
+    padding: 0px 20px;
+    background: rgb( var( --r3 ) );
+    font-size: 12px;
+    line-height: 20px;
+    transform: rotate( 45deg );
+    position: absolute;
+    right: -20px;
+    top: 8px;
+}
+ul.External li.stop span {
+    background: rgb( var( --r4 ) );
+}
+ul.External li span i {
+    color: rgb( var( --r1 ) );
+    font-size: 12px;
+    line-height: 20px;
+}
+ul.External li i { vertical-align: middle; }
